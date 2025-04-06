@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Nature Cure - Acupuncture & Naturopathy Clinic in Mumbai</title>
+    <style>
+     /* Base Styles */
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    /* Color Palette - Slightly refined for better aesthetics */
+    --primary-color: #2e7d32;
+    --primary-light: #e8f5e9;
+    --primary-dark: #1b5e20;
+    --secondary-color: #8d6e63; /* Brown tone for accent */
+    --text-dark: #333;
+    --text-light: #fff;
+    --text-muted: #555;
+    --bg-light: #f9f9f9;
+    --bg-cream: #fcf8e3; /* Cream background for some sections */
+    --border-light: #ddd;
+    --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+    --spacing-xxl: 60px;
+    
+    /* Border Radius */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-circle: 50%;
+}
+
+body {
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--spacing-xxl) 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn-centere{
+    margin: auto;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #6d4c41; /* Darker brown on hover */
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Navbar Styles - Improved */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    box-shadow: var(--shadow-soft);
+    padding: var(--spacing-xs) 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 5px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    max-height: 60px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .logo img {
+    max-height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: var(--spacing-lg);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section - Enhanced */
+.hero {
+    height: 80vh;
+    background-image:  url("./hero.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 80px;
+    position: relative;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: var(--text-light);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero .btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 1.1rem;
+    margin: 0 10px;
+}
+
+/* About Section */
+.about {
+    background-color: var(--bg-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.about:before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+    opacity: 0.5;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Services Section - Improved */
+.services {
+    background-color: var(--text-light);
+    position: relative;
+}
+
+.services:after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    bottom: -75px;
+    left: -75px;
+    opacity: 0.5;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card {
+    background: var(--text-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-light);
+}
+
+.service-card img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.05);
+}
+
+.service-card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    background-color: var(--primary-light);
+    position: relative;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    background: var(--primary-color);
+    color: var(--text-light);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-sm);
+    flex-shrink: 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-text h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.125rem;
+}
+
+/* Therapies For Section - Enhanced */
+.therapies-section {
+    background-color: var(--bg-cream);
+    padding: var(--spacing-xxl) 0;
+    position: relative;
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--spacing-md);
+}
+
+.condition-card {
+    background: var(--text-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+.condition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.condition-image {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.condition-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.condition-card:hover .condition-image img {
+    transform: scale(1.1);
+}
+
+.condition-card h4 {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Healer Profile Section */
+.healer-profile {
+    background-color: var(--bg-light);
+    padding: var(--spacing-xxl) 0;
+}
+
+.healers-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.healer-card {
+    display: flex;
+    gap: var(--spacing-lg);
+    background: var(--text-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.healer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.healer-image {
+    width: 180px;
+    height: 220px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    flex-shrink: 0;
+}
+
+.healer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.healer-card:hover .healer-image img {
+    transform: scale(1.05);
+}
+
+.healer-info h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.healer-title {
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Expertise Area Section */
+.expertise-area {
+    background-color: var(--text-light);
+    padding: var(--spacing-xxl) 0;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.expertise-item {
+    padding: var(--spacing-lg);
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.expertise-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.expertise-item h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    background-color: var(--primary-light);
+    padding: var(--spacing-xxl) 0;
+    position: relative;
+}
+
+.philosophy-section:before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--primary-color);
+    opacity: 0.1;
+    border-radius: 50%;
+    top: 50px;
+    left: 50px;
+}
+
+.philosophy-section:after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--primary-color);
+    opacity: 0.1;
+    border-radius: 50%;
+    bottom: 50px;
+    right: 50px;
+}
+
+.philosophy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Video Section - New */
+.video-section {
+    background-color: var(--bg-light);
+    padding: var(--spacing-xxl) 0;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-medium);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Testimonials Section - Enhanced */
+.testimonials {
+    background-color: var(--bg-light);
+    position: relative;
+}
+
+.testimonials:before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    opacity: 0.5;
+    top: -100px;
+    right: 100px;
+    z-index: 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-card {
+    background: var(--text-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.stars {
+    color: gold;
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.testimonial-text::before {
+    content: '"';
+    font-size: 50px;
+    color: rgba(46, 125, 50, 0.1);
+    position: absolute;
+    left: -15px;
+    top: -15px;
+}
+
+.testimonial-text::after {
+    content: '"';
+    font-size: 50px;
+    color: rgba(46, 125, 50, 0.1);
+    position: absolute;
+    right: -15px;
+    bottom: -30px;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+}
+
+.client-details h4 {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Address Section - New */
+.address-section {
+    background-color: var(--bg-cream);
+    padding: var(--spacing-xxl) 0;
+}
+
+.address-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.address-card {
+    background: var(--text-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+.address-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.address-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+}
+
+.address-card p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.address-card .phone {
+    font-weight: bold;
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    margin-top: var(--spacing-sm);
+    display: block;
+}
+
+/* Footer - Enhanced */
+footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    padding: var(--spacing-xxl) 0 var(--spacing-md);
+    position: relative;
+}
+
+footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer-column h3 {
+    color: #a5d6a7;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-circle);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    color: #aaa;
+    font-size: 0.875rem;
+}
+
+/* Scroll to Top Button - New */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-5px);
+}
+
+/* Responsive Styles - Improved */
+@media (max-width: 1200px) {
+    .conditions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .healers-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: var(--spacing-md) 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .nav-links li {
+        margin: var(--spacing-sm) 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .menu-toggle.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .menu-toggle.active div:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        /* Smaller spacing for mobile */
+        --spacing-xl: 30px;
+        --spacing-xxl: 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .conditions-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .healer-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .healer-image {
+        width: 150px;
+        height: 180px;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 90%;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service-card,
+    .testimonial-card,
+    .expertise-item {
+        padding: var(--spacing-md);
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 80%;
+    }
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.healer-info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .healer-info p {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+    
+    /* Limit text in cards to be more consistent */
+    .testimonial-text p {
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 150px;
+    }
+    
+    /* Add consistent height to expertise items */
+    .expertise-item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .expertise-item p {
+        flex-grow: 1;
+    }
+
+
+    
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="./logot1.jpg" alt="Sagar Nature Cure Logo">
+            </a>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Sagar Nature Cure</h1>
+                <p>Best Acupuncture & Naturopathy Clinic in Mumbai | 20+ Years of Expertise</p>
+                <a href="https://wa.me/9930276645" class="btn">Connect on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Sagar Nature Cure</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Sagar Nature Cure, a trusted center for Acupuncture, naturopathy, acupressure, and holistic wellness for over 20 years. Located in Mumbai, we specialize in natural healing methods that restore balance to your body and mind.</p>
+                    <p>Our expert practitioners use a combination of Acupuncture, acupressure, naturopathy, and time-tested home remedies to address various health concerns without side effects.</p>
+                    <p>From relieving chronic pain and reducing stress to managing lifestyle disorders, our personalized treatments focus on natural solutions. We incorporate time-tested home remedies like warm compress therapy for pain relief, saltwater gargles for throat health, herbal steam inhalation for congestion, and oil massages for muscle relaxation.</p>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <!-- Key Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Key Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="./sujokAcupuncture.jpeg" alt="Sujok Acupuncture">
+                    <h3>Sujok Acupuncture</h3>
+                    <p>Effective micro-acupuncture therapy for pain relief and energy balance.</p>
+                </div>
+                <div class="service-card">
+                    <img src="./homeremedies.jpeg" alt="Home Remedies">
+                    <h3>Home Remedies</h3>
+                    <p>Natural healing solutions using traditional home therapies.</p>
+                </div>
+                <div class="service-card">
+                    <img src="./asset/moxibustion.jpeg" alt="Moxibustion">
+                    <h3>Moxibustion</h3>
+                    <p>Ancient therapy using heat application to enhance healing and circulation.</p>
+                </div>
+                <div class="service-card">
+                    <img src="./cupping.jpeg" alt="Cupping Therapy">
+                    <h3>Cupping Therapy</h3>
+                    <p>Therapeutic suction method for detoxification and pain management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us" id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Sagar Nature Cure?</h2>
+            <div class="features-grid">
+                <div class="features-column">
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3>40+ Years of Expertise</h3>
+                            <p>Trusted Acupuncture and Naturopathy specialists with decades of experience.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3>Certified Practitioners</h3>
+                            <p>Skilled in Acupuncture, Acupressure and Holistic Therapies.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3>4.8+ Google Rating</h3>
+                            <p>Loved and trusted by 30k+ happy patients.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-column">
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3>Personalized Wellness Plans</h3>
+                            <p>Tailored treatments for pain relief and stress management.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3>Modern Meets Traditional</h3>
+                            <p>A perfect blend of ancient wisdom and modern facilities.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3>Safe & Drug-Free Therapies</h3>
+                            <p>100% natural healing without side effects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="therapies-section">
+        <div class="container">
+            <h2 class="section-title">Therapies For</h2>
+            <div class="conditions-grid">
+                <!-- Row 1 -->
+                <div class="condition-card">
+                    <div class="condition-image">
+                        <img src="./asset/tennis-elbow.png" alt="Tennis Elbow">
+                    </div>
+                    <h4>Tennis Elbow</h4>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-image">
+                        <img src="./asset/joints-pain.jpg" alt="Joints Pain">
+                    </div>
+                    <h4>Joints Pain</h4>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-image">
+                        <img src="./asset/hearing-loss.jpg" alt="Hearing Loss/Tinnitus">
+                    </div>
+                    <h4>Hearing Loss/Tinnitus</h4>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-image">
+                        <img src="./asset/vitiligo.jpg" alt="Leucoderma/Vitiligo">
+                    </div>
+                    <h4>Leucoderma/Vitiligo</h4>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-image">
+                        <img src="./asset/pcod.jpg" alt="PCOD/Infertility">
+                    </div>
+                    <h4>PCOD/Infertility</h4>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-image">
+                        <img src="./asset/acidity.jpg" alt="Acidity/Gas">
+                    </div>
+                    <h4>Acidity/Gas</h4>
+                </div>
+                
+                <!-- Row 2 -->
+             
+                   <!-- Row 3 -->
+
+                </section>
+    
+                <section class="healer-profile">
+                    <div class="container">
+                        <h2 class="section-title">Meet Our Healers</h2>
+                        <div class="healers-container">
+                            <div class="healer-card">
+                                <div class="healer-image">
+                                    <img src="./asset/healer1.jpg" alt="Healer S.N. Kamtam">
+                                </div>
+                                <div class="healer-info">
+                                    <h3>Healer S.N. Kamtam</h3>
+                                    <p class="healer-title">Pioneer in Natural Healing & Holistic Wellness</p>
+                                    <p>With over 40 years of experience in natural therapies, Healer Kamtam has transformed countless lives through his expertise in acupuncture and holistic treatments.</p>
+                                    <p>His philosophy: "The body is not the enemy; it is a guide. Every discomfort is a message that should be understood, not suppressed."</p>
+                                    <p><strong>Specializations:</strong> Chronic Pain Management, Energy Balancing, Natural Detoxification</p>
+                                </div>
+                            </div>
+                            
+                            <div class="healer-card">
+                                <div class="healer-image">
+                                    <img src="./asset/healer2.jpg" alt="Nilesh Kamtam">
+                                </div>
+                                <div class="healer-info">
+                                    <h3>Healer Nilesh Kamtam</h3>
+                                    <p class="healer-title">Continuing the Legacy of Healing</p>
+                                    <p>Following in his father's footsteps, Nilesh Kamtam combines traditional wisdom with modern wellness practices to deliver personalized, compassionate care.</p>
+                                    <p>Together with Healer S.N. Kamtam, he helps patients lead healthier, more balanced lives through natural healing methods.</p>
+                                    <p><strong>Specializations:</strong> Lifestyle Disorders, Women's Health, Stress Management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+
+    <section class="expertise-area">
+        <div class="container">
+            <h2 class="section-title">Areas of Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>Holistic Pain Management</h3>
+                    <p>A gentle yet powerful approach to addressing joint pain, muscle stiffness, and nerve-related discomfort.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Deep Energy Balancing</h3>
+                    <p>Techniques that realign the body's internal energies, ensuring optimal functioning of organs and systems.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Pressure Point Healing</h3>
+                    <p>A specialized practice that stimulates key points in the body to enhance circulation and accelerate natural recovery.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Detox & Rejuvenation</h3>
+                    <p>A systematic cleansing approach that removes toxins, boosts digestion, and revitalizes the body.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy-section">
+        <div class="container">
+            <h2 class="section-title">The Philosophy of Healing</h2>
+            <div class="philosophy-content">
+                <p>Healer Kamtam's approach is built on a simple yet profound belief: the body is not the enemy; it is a guide. Every ache, every discomfort, every imbalance is a message—one that should be understood, not suppressed. His treatments are aimed at listening to the body's signals, decoding them, and addressing the root cause rather than offering temporary relief.</p>
+                <p>His patients often describe their experience as more than just treatment—it's a journey of self-discovery, healing, and empowerment. Through his guidance, individuals learn how to take charge of their own well-being, making small yet significant lifestyle changes that lead to a healthier, happier life.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Patients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        <p>Healer Kamtam is gifted, knowledgeable, experienced, skillful, wise, analytical and has a great sense of humour! He is well versed in English, Hindi, Marathi, Gujarati, Telgu and many more languages therefore it's easy to communicate health issues with him by all age groups. The clinic at Matunga 5 Gardens is air conditioned, spacious and has all the amenities and equipments needed for acupuncture therapy. Healer Kamtam has resolved my sciatica, hormonal imbalance, obesity, walk problems, menstrual menopause issues, my father spine injury, my uncles cold shoulder, with regular sessions.</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-details">
+                            <h4>Namita Pipalia</h4>
+                            <p>11 months ago</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        <p>The ACUPUNCTURE doc at Sagar Clinic Dadar West -- Healer Shankar Kamtan, is really an extremely gifted healer. I had a tumor on my liver, he removed it. He helped my husband with a frozen shoulder with 2 sittings and he had an allergic rash for 3 years, which he cured COMPLETELY. He has cured and helped everyone i have sent. He has a gift from God. H.G. bless Him.</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-details">
+                            <h4>Monica Sarin</h4>
+                            <p>2 years ago</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        <p>Healer is too good. We go with one illness and be sure he will give you helpful tips n home remedies for common illness. V polite and gives full time for the patient to speak. Healer is overall a package of humanity u derstanding patience a man of virtue.</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-details">
+                            <h4>Anonymous Patient</h4>
+                            <p>11 months ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section - After Testimonials -->
+    <section class="video-section" id="videos">
+        <div class="container">
+            <h2 class="section-title">Watch Our Videos</h2>
+            <div class="video-grid">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/R0sG96GDOwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_LoULmhesnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/y-kRtllbE4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Address Section -->
+    <section class="address-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Our Clinics</h2>
+            <div class="address-grid">
+                <div class="address-card">
+                    <h3>Dadar Center</h3>
+                    <p>Shop No - 5, Krishna Niwas building, Bhawani Shanker road, Dadar (W). Mumbai - 28, Near Dadar Police Station main gate</p>
+                    <!-- <a href="tel:9930276645" class="phone">9930276645 / 9810481525</a> -->
+                </div>
+                <div class="address-card">
+                    <h3>Matunga Center</h3>
+                    <p>101, 1st floor, Madhuban building, M.H.Mahajani road. Matunga Central, Mumbai 19, Opp V.J.T.I.College (Director's Bunglow).</p>
+                    <!-- <a href="tel:9930276645" class="phone">9930276645 / 9810481525</a> -->
+                </div>
+                <div class="address-card">
+                    <h3>Ghatkopar Center</h3>
+                    <p>105, 1st Floor, Shree Sai Shakti CHS, Patel Chowk, Jethabhai Road, Ghatkopar (E)</p>
+                    <!-- <a href="tel:9930276645" class="phone">9930276645 / 9810481525</a> -->
+                </div>
+                <div class="address-card">
+                    <h3>Borivali Center</h3>
+                    <p>104, 1st floor, Ganesh Krupa building, Shimpoli road, Opp Megha Party Hall Lane, Borivali (W), behind Pantaloons Showroom</p>
+                    <!-- <a href="tel:9930276645" class="phone">9930276645 / 9810481525</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Sagar Nature Cure</h3>
+                    <p>Trusted center for Acupuncture, naturopathy, acupressure, and holistic wellness for over 20 years in Mumbai.</p>
+                    <!-- <div class="social-links">
+                        <a href="#"><span>f</span></a>
+                        <a href="#"><span>in</span></a>
+                        <a href="#"><span>ig</span></a>
+                    </div> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Acupuncture</a></li>
+                        <li>Naturopathy</li>
+                        <li>Holistic Healing</li>
+                        <li>Home Remedies</li>
+                        <li>Acupressure</li>
+                    </ul>
+                </div> -->
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>📍 <a href="https://www.google.com/maps/search/?api=1&query=Krishna+Niwas+building+Bhawani+Shanker+road+Dadar+West+Mumbai+28" target="_blank">Dadar Center</a></li>
+                        <li>📍 <a href="https://www.google.com/maps/search/?api=1&query=Madhuban+building+MH+Mahajani+road+Matunga+Central+Mumbai+19+VJTI+College" target="_blank">Matunga Center</a></li>
+                        <li>📍 <a href="https://www.google.com/maps/search/?api=1&query=Shree+Sai+Shakti+CHS+Patel+Chowk+Jethabhai+Road+Ghatkopar+East" target="_blank">Ghatkopar Center</a></li>
+                        <li>📍 <a href="https://www.google.com/maps/search/?api=1&query=Ganesh+Krupa+building+Shimpoli+road+Borivali+West+Mumbai" target="_blank">Borivali Center</a></li>
+                        <li>📞 <a href="tel:9930276645">9930276645</a></li>
+                        <li>📞 <a href="tel:9810481525">9810481525</a></li>
+                        <li>📱 <a href="https://wa.me/9810481525">WhatsApp Us</a></li>
+                        <!-- <li>✉️ <a href="mailto:info@sagarnaturecure.com">info@sagarnaturecure.com</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Sagar Nature Cure. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Navigation Toggle for Mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling for Internal Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
