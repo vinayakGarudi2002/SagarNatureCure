@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to access everything
+Disallow: 
+
+# Sitemap location
+Sitemap: https://vinayakgarudi2002.github.io/SagarNatureCure/sitemap.xml
