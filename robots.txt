@@ -6,3 +6,5 @@ Disallow:
 
 # Sitemap location
 Sitemap: https://vinayakgarudi2002.github.io/SagarNatureCure/sitemap.xml
+
+Sitemap: https://vinayakgarudi2002.github.io/SagarNatureCure/sitemap_new.xml
