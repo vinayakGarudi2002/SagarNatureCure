@@ -1,10 +1,3 @@
 User-agent: *
 Allow: /
-
-# Allow all search engines to access everything
-Disallow: 
-
-# Sitemap location
-Sitemap: https://vinayakgarudi2002.github.io/SagarNatureCure/sitemap.xml
-
-Sitemap: https://vinayakgarudi2002.github.io/SagarNatureCure/sitemap_new.xml
+Sitemap: https://sagarnaturecure.com/sitemap.xml
