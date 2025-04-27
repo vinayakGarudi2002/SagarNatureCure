@@ -18,12 +18,81 @@
         <meta property="og:image" content="https://sagarnaturecure.com/assets/banner.jpg"> <!-- change if needed -->
         <meta property="og:url" content="https://sagarnaturecure.com/">
         <meta property="og:type" content="website">
+        
+        <!-- Content Security Policy -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.ytimg.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://www.youtube.com;">
+        
+        <!-- Preconnect to external domains -->
+        <link rel="preconnect" href="https://www.youtube.com">
+        <link rel="preconnect" href="https://www.google.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
       
         <!-- Favicon -->
         <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        
+        <!-- Critical CSS -->
+        <style>
+            /* Basic resets and above-fold styling */
+          
+            /* Video Modal Styles */
+            .video-modal {
+                display: none;
+                position: fixed;
+                z-index: 2000;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.85);
+                overflow: auto;
+            }
+            
+            .modal-content {
+                position: relative;
+                margin: 5% auto;
+                width: 90%;
+                max-width: 800px;
+                animation: modalFadeIn 0.3s;
+            }
+            
+            @keyframes modalFadeIn {
+                from {opacity: 0; transform: translateY(-30px);}
+                to {opacity: 1; transform: translateY(0);}
+            }
+            
+            .close-modal {
+                position: absolute;
+                top: -40px;
+                right: 0;
+                color: white;
+                font-size: 35px;
+                font-weight: bold;
+                cursor: pointer;
+                z-index: 2100;
+            }
+            
+            .modal-video-container {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                height: 0;
+                overflow: hidden;
+                background-color: #000;
+                border-radius: 4px;
+            }
+            
+            .modal-video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
       
-        <!-- Styles -->
-        <link rel="stylesheet" href="styles.css">
+        <!-- Non-critical CSS loaded with low priority -->
+        <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
         <link rel="canonical" href="https://sagarnaturecure.com/" />
       
@@ -36,7 +105,7 @@
         
         <div class="container">
             <a href="#" class="logo">
-                <img src="./logot1.jpg" alt="Sagar Nature Cure Logo">
+                <img src="./logot1.jpg" alt="Sagar Nature Cure Logo" width="180" height="50" loading="eager">
             </a>
             <div class="menu-toggle">
                 <div></div>
@@ -86,22 +155,22 @@
             <h2 class="section-title">Our Key Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="./sujokAcupuncture.jpeg" alt="Sujok Acupuncture">
+                    <img src="./asset/sujokAcupuncture.webp" alt="Sujok Acupuncture" width="300" height="200" loading="lazy">
                     <h3>Sujok Acupuncture</h3>
                     <p>Effective micro-acupuncture therapy for pain relief and energy balance.</p>
                 </div>
                 <div class="service-card">
-                    <img src="./homeremedies.jpeg" alt="Home Remedies">
+                    <img src="./asset/homeremedies.webp" alt="Home Remedies" width="300" height="200" loading="lazy">
                     <h3>Home Remedies</h3>
                     <p>Natural healing solutions using traditional home therapies.</p>
                 </div>
                 <div class="service-card">
-                    <img src="./asset/moxibustion.jpeg" alt="Moxibustion">
+                    <img src="./asset/moxibustion.webp" alt="Moxibustion" width="300" height="200" loading="lazy">
                     <h3>Moxibustion</h3>
                     <p>Ancient therapy using heat application to enhance healing and circulation.</p>
                 </div>
                 <div class="service-card">
-                    <img src="./cupping.jpeg" alt="Cupping Therapy">
+                    <img src="./asset/cupping.webp" alt="Cupping Therapy" width="300" height="200" loading="lazy">
                     <h3>Cupping Therapy</h3>
                     <p>Therapeutic suction method for detoxification and pain management.</p>
                 </div>
@@ -171,51 +240,33 @@
                 <!-- Row 1 -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/tennis-elbow.png" alt="Tennis Elbow">
+                        <img src="./asset/tennis-elbow.webp" alt="Tennis Elbow" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Tennis Elbow</h4>
                 </div>
-                <!-- <div class="condition-card">
-                    <div class="condition-image">
-                        <img src="./asset/joints-pain.jpg" alt="Joints Pain">
-                    </div>
-                    <h4>Joints Pain</h4>
-                </div> -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/hearing-loss.jpeg" alt="Hearing Loss/Tinnitus">
+                        <img src="./asset/hearing-loss.webp" alt="Hearing Loss/Tinnitus" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Hearing Loss/Tinnitus</h4>
                 </div>
-                <!-- <div class="condition-card">
-                    <div class="condition-image">
-                        <img src="./asset/vitiligo.jpg" alt="Leucoderma/Vitiligo">
-                    </div>
-                    <h4>Leucoderma/Vitiligo</h4>
-                </div> -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/pcod.jpeg" alt="PCOD/Infertility">
+                        <img src="./asset/pcod.webp" alt="PCOD/Infertility" width="150" height="150" loading="lazy">
                     </div>
                     <h4>PCOD/Infertility</h4>
                 </div>
-                <!-- <div class="condition-card">
-                    <div class="condition-image">
-                        <img src="./asset/acidity.jpg" alt="Acidity/Gas">
-                    </div>
-                    <h4>Acidity/Gas</h4>
-                </div> -->
                 
                 <!-- Row 2 -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/diabetes.jpeg" alt="Diabetes">
+                        <img src="./asset/diabetes.webp" alt="Diabetes" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Diabetes</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/sinusitis.jpeg" alt="Sinusitis">
+                        <img src="./asset/sinusitis.webp" alt="Sinusitis" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Sinusitis</h4>
                 </div>
@@ -227,19 +278,19 @@
                 </div> -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/psoriasis.jpeg" alt="Psoriasis">
+                        <img src="./asset/psoriasis.webp" alt="Psoriasis" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Psoriasis</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/asthma.jpeg" alt="Asthma/Lungs Disorder">
+                        <img src="./asset/asthma.webp" alt="Asthma/Lungs Disorder" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Asthma/Lungs Disorder</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/thyroid.jpeg" alt="Thyroid">
+                        <img src="./asset/thyroid.webp" alt="Thyroid" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Thyroid</h4>
                 </div>
@@ -247,31 +298,31 @@
                 <!-- Row 3 -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/maigraine.jpeg" alt="Migraine">
+                        <img src="./asset/maigraine.webp" alt="Migraine" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Migraine</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/blood-pressure.jpeg" alt="Blood Pressure">
+                        <img src="./asset/blood-pressure.webp" alt="Blood Pressure" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Blood Pressure</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/paralysis.jpeg" alt="Paralysis">
+                        <img src="./asset/paralysis.webp" alt="Paralysis" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Paralysis</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/height.jpeg" alt="Height Growth">
+                        <img src="./asset/height.webp" alt="Height Growth" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Height Growth</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/kidney.jpeg" alt="Kidney Stone/Disorders">
+                        <img src="./asset/kidney.webp" alt="Kidney Stone/Disorders" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Kidney Stone/Disorders</h4>
                 </div>
@@ -285,19 +336,19 @@
                 <!-- Row 4 -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/pimples.jpeg" alt="Pimples">
+                        <img src="./asset/pimples.webp" alt="Pimples" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Pimples</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/obesity.jpeg" alt="Obesity">
+                        <img src="./asset/obesity.webp" alt="Obesity" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Obesity</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/varicose.jpeg" alt="Varicose Vein">
+                        <img src="./asset/varicose.webp" alt="Varicose Vein" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Varicose Vein</h4>
                 </div>
@@ -309,13 +360,13 @@
                 </div> -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/knee.jpeg" alt="Knee/Osteoarthritis">
+                        <img src="./asset/knee.webp" alt="Knee/Osteoarthritis" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Knee/Osteoarthritis</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/lumbar.jpeg" alt="Lumbar Spondylosis">
+                        <img src="./asset/lumbar.webp" alt="Lumbar Spondylosis" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Lumbar Spondylosis</h4>
                 </div>
@@ -323,40 +374,34 @@
                 <!-- Row 5 -->
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/sciatica.jpeg" alt="Sciatica">
+                        <img src="./asset/sciatica.webp" alt="Sciatica" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Sciatica</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/hip-jointavn.jpeg" alt="Hip Joint/AVN">
+                        <img src="./asset/hip-jointavn.webp" alt="Hip Joint/AVN" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Hip Joint/AVN</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/heel-spur.jpeg" alt="Heel Spur">
+                        <img src="./asset/heel-spur.webp" alt="Heel Spur" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Heel Spur</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/cervieal-spondylosis.jpeg" alt="Cervical Spondylosis">
+                        <img src="./asset/cervieal-spondylosis.webp" alt="Cervical Spondylosis" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Cervical Spondylosis</h4>
                 </div>
                 <div class="condition-card">
                     <div class="condition-image">
-                        <img src="./asset/frozen-shoulder.jpeg" alt="Frozen Shoulder">
+                        <img src="./asset/frozen-shoulder.webp" alt="Frozen Shoulder" width="150" height="150" loading="lazy">
                     </div>
                     <h4>Frozen Shoulder</h4>
                 </div>
-                <!-- <div class="condition-card">
-                    <div class="condition-image">
-                        <img src="./asset/wrist-carpal-tunnel.jpg" alt="Wrist/Carpal Tunnel">
-                    </div>
-                    <h4>Wrist/Carpal Tunnel</h4>
-                </div> -->
             </div>
         </div>
 </section>
@@ -366,7 +411,7 @@
                         <div class="healers-container">
                             <div class="healer-card">
                                 <div class="healer-image">
-                                    <img src="./asset/healer1.jpg" alt="Healer S.N. Kamtam">
+                                    <img src="./asset/healer1.webp" alt="Healer S.N. Kamtam" width="300" height="400" loading="lazy">
                                 </div>
                                 <div class="healer-info">
                                     <h3>Dr. Shankarswami Kamtam</h3>
@@ -382,7 +427,7 @@
                             
                             <div class="healer-card">
                                 <div class="healer-image">
-                                    <img src="./asset/healer2.jpg" alt="Nilesh Kamtam">
+                                    <img src="./asset/healer2.webp" alt="Nilesh Kamtam" width="300" height="400" loading="lazy">
                                 </div>
                                 <div class="healer-info">
                                     <h3>Hlr.Nilesh.S.Kamtam</h3>
@@ -480,19 +525,113 @@
         <div class="container">
             <h2 class="section-title">Watch Our Videos</h2>
             <div class="video-grid">
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/R0sG96GDOwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-container" data-youtube-id="R0sG96GDOwE">
+                    <div class="video-thumbnail" onclick="loadYouTubeVideo(this)">
+                        <img src="https://i.ytimg.com/vi/R0sG96GDOwE/hqdefault.jpg" alt="YouTube thumbnail">
+                        <div class="play-button">▶</div>
+                    </div>
                 </div>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_LoULmhesnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-container" data-youtube-id="_LoULmhesnE">
+                    <div class="video-thumbnail" onclick="loadYouTubeVideo(this)">
+                        <img src="https://i.ytimg.com/vi/_LoULmhesnE/hqdefault.jpg" alt="YouTube thumbnail">
+                        <div class="play-button">▶</div>
+                    </div>
                 </div>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/y-kRtllbE4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-container" data-youtube-id="y-kRtllbE4k">
+                    <div class="video-thumbnail" onclick="loadYouTubeVideo(this)">
+                        <img src="https://i.ytimg.com/vi/y-kRtllbE4k/hqdefault.jpg" alt="YouTube thumbnail">
+                        <div class="play-button">▶</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
+    <style>
+        .video-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .video-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            background-color: #000;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-thumbnail:hover {
+            transform: scale(1.03);
+        }
+        
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail:hover img {
+            opacity: 0.7;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        
+        .video-thumbnail:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: rgba(255, 0, 0, 1);
+        }
+        
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .play-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    </style>
+
     <!-- Address Section -->
     <section class="address-section" id="contact">
         <div class="container">
@@ -576,32 +715,109 @@
         </div>
     </footer>
 
-    <script>
-        // Simple Navigation Toggle for Mobile
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-        
-        // Smooth Scrolling for Internal Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
+    <script defer>
+        // Wait until DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                }, { passive: true });
+            }
+            
+            // Implement smooth scrolling with optimized code
+            const smoothScroll = function(targetId) {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('.nav-links').classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            };
+            
+            // Use event delegation for better performance
+            document.body.addEventListener('click', function(e) {
+                const link = e.target.closest('a[href^="#"]');
+                if (link) {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    if (targetId !== '#') {
+                        smoothScroll(targetId);
+                    }
+                }
+            }, { passive: false });
+            
+            // YouTube Video Modal Functionality
+            const modal = document.getElementById('videoModal');
+            const modalIframe = document.getElementById('modalYoutubePlayer');
+            const closeBtn = document.querySelector('.close-modal');
+            
+            // Function to open the modal and load YouTube video
+            function openVideoModal(videoId) {
+                modalIframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`);
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+            }
+            
+            // Function to close the modal
+            function closeVideoModal() {
+                modal.style.display = 'none';
+                modalIframe.setAttribute('src', ''); // Stop the video from playing
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+            
+            // Add click event listeners to all video thumbnails
+            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+            videoThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const videoId = this.parentNode.getAttribute('data-youtube-id');
+                    openVideoModal(videoId);
+                });
+            });
+            
+            // Close the modal when clicking the X
+            closeBtn.addEventListener('click', closeVideoModal);
+            
+            // Close the modal when clicking outside the content
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeVideoModal();
+                }
+            });
+            
+            // Close modal with ESC key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modal.style.display === 'block') {
+                    closeVideoModal();
                 }
             });
         });
+        
+        // Define loadYouTubeVideo to be compatible with the existing thumbnail onclick
+        function loadYouTubeVideo(element) {
+            const videoId = element.parentNode.getAttribute('data-youtube-id');
+            const modal = document.getElementById('videoModal');
+            const modalIframe = document.getElementById('modalYoutubePlayer');
+            
+            modalIframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`);
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
     </script>
+    
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-video-container">
+                <iframe id="modalYoutubePlayer" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

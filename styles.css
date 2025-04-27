@@ -227,7 +227,7 @@ p {
 /* Hero Section - Enhanced */
 .hero {
     height: 80vh;
-    background-image:  url("./hero.png");
+    background-image:  url("./hero.webp");
     background-size: cover;
     background-position: center;
     display: flex;
