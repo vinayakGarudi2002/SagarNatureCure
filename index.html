@@ -30,10 +30,90 @@
         <!-- Favicon -->
         <link rel="icon" href="./favicon.ico" type="image/x-icon">
         
+        <!-- Preload Critical Images -->
+        <link rel="preload" as="image" href="./logot1.jpg" fetchpriority="high">
+        <link rel="preload" as="image" href="./hero.webp" fetchpriority="high">
+        
         <!-- Critical CSS -->
         <style>
             /* Basic resets and above-fold styling */
-          
+            
+            /* Prevent CLS with image aspect ratios */
+            .hero {
+                min-height: 500px; /* Reserve space for hero section */
+                position: relative;
+                background-color: #f5f5f5; /* Placeholder color while image loads */
+            }
+            
+            /* Image container aspect ratio box */
+            .img-container {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                background-color: #f0f0f0; /* Light gray placeholder */
+            }
+            
+            /* Prevent CLS in services grid */
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .service-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 25px 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .service-card .img-wrapper {
+                width: 150px;
+                height: 150px;
+                position: relative;
+                margin-bottom: 20px;
+                background-color: #f0f0f0; /* Placeholder color */
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            
+            .service-card img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .service-card .service-content {
+                width: 100%;
+            }
+            
+            .service-card h3 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 20px;
+                color: #2e7d32; /* Green color to match theme */
+            }
+            
+            .service-card p {
+                margin: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #555;
+            }
+            
             /* Video Modal Styles */
             .video-modal {
                 display: none;
@@ -155,24 +235,40 @@
             <h2 class="section-title">Our Key Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="./asset/sujokAcupuncture.webp" alt="Sujok Acupuncture" width="300" height="200" loading="lazy">
-                    <h3>Sujok Acupuncture</h3>
-                    <p>Effective micro-acupuncture therapy for pain relief and energy balance.</p>
+                    <div class="img-wrapper">
+                        <img src="./asset/sujokAcupuncture.webp" alt="Sujok Acupuncture" width="300" height="200" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Sujok Acupuncture</h3>
+                        <p>Effective micro-acupuncture therapy for pain relief and energy balance.</p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <img src="./asset/homeremedies.webp" alt="Home Remedies" width="300" height="200" loading="lazy">
-                    <h3>Home Remedies</h3>
-                    <p>Natural healing solutions using traditional home therapies.</p>
+                    <div class="img-wrapper">
+                        <img src="./asset/homeremedies.webp" alt="Home Remedies" width="300" height="200" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Home Remedies</h3>
+                        <p>Natural healing solutions using traditional home therapies.</p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <img src="./asset/moxibustion.webp" alt="Moxibustion" width="300" height="200" loading="lazy">
-                    <h3>Moxibustion</h3>
-                    <p>Ancient therapy using heat application to enhance healing and circulation.</p>
+                    <div class="img-wrapper">
+                        <img src="./asset/moxibustion.webp" alt="Moxibustion" width="300" height="200" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Moxibustion</h3>
+                        <p>Ancient therapy using heat application to enhance healing and circulation.</p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <img src="./asset/cupping.webp" alt="Cupping Therapy" width="300" height="200" loading="lazy">
-                    <h3>Cupping Therapy</h3>
-                    <p>Therapeutic suction method for detoxification and pain management.</p>
+                    <div class="img-wrapper">
+                        <img src="./asset/cupping.webp" alt="Cupping Therapy" width="300" height="200" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cupping Therapy</h3>
+                        <p>Therapeutic suction method for detoxification and pain management.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -718,6 +814,24 @@
     <script defer>
         // Wait until DOM is fully loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Add intersection observer for lazy loading
+            if ('IntersectionObserver' in window) {
+                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+            
             // Mobile menu toggle functionality
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
